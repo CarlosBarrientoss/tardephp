@@ -13,7 +13,30 @@
     <section class="section dashboard">
       <div class="row">
 
+      <?php 
+      
+        if(!isset($_SESSION)) session_start();
 
+          if (isset($_GET["route"])){
+
+            $allowedRoutes = ["home","users","exit"];
+
+            if(in_array($_GET["route"],$allowedRoutes)){ 
+
+              include "app/vistas/modulos/".$_GET["route"].".php";
+
+            }else{
+              include "app/vistas/modulos/404.php";
+            }
+
+          }else{
+
+            include "app/vistas/modulos/home.php";
+            
+          }
+        
+
+      ?>
 
       </div>
     </section>
