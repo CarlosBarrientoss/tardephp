@@ -16,7 +16,6 @@
       <?php 
       
         if(!isset($_SESSION)) session_start();
-
           if (isset($_GET["route"])){
 
             $allowedRoutes = ["home","users","exit"];
@@ -32,7 +31,7 @@
           }else{
 
             include "app/vistas/modulos/home.php";
-            
+
           }
         
 
