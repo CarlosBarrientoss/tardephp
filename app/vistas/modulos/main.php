@@ -15,10 +15,13 @@
 
       <?php 
       
-        if(!isset($_SESSION)) session_start();
+          if (session_status() !== PHP_SESSION_ACTIVE) {
+              session_start();
+          }
+
           if (isset($_GET["route"])){
 
-            $allowedRoutes = ["home","users","exit"];
+            $allowedRoutes = ["home","users","exit", "login"];
 
             if(in_array($_GET["route"],$allowedRoutes)){ 
 

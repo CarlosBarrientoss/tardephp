@@ -1,7 +1,11 @@
   <?php
-   if(!isset($_SESSION)) session_start();
+   
+   if (session_status() !== PHP_SESSION_ACTIVE) {
+       session_start();
+   }
+
    if(isset($_SESSION["authenticated"]) && $_SESSION["authenticated"] === "ok") return;
-   require_once "app/controladores/login.controller.php";
+      require_once "app/controladores/login.controller.php";
   ?>
   
   <main>
@@ -27,7 +31,7 @@
                     <h5 class="card-title text-center pb-0 fs-4">Inicia con tu cuenta</h5>
                   </div>
 
-                  <form class="row g-3 needs-validation" method="post" novalidate>
+                  <form class="row g-3 needs-validation" action="index.php?route=login&action=verify" method="post" novalidate>
 
                     <div class="col-12">
                       <label for="yourUsername" class="form-label">Correo</label>
@@ -44,8 +48,7 @@
                       <div class="invalid-feedback">Ingresa tu contraseña</div>
                     </div>
 
-                    <div class="col-12">
-                      <?php LoginController::ctrVerifyUser(); ?>  
+                    <div class="col-12">                    
                       <button class="btn btn-primary w-100" type="submit">Entrar</button>
                     </div>
                   </form>
