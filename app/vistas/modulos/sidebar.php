@@ -3,11 +3,25 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="home">
           <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
+          <span>Inicio</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li><!-- End Inicio Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link " href="users">
+          <i class="bi bi-grid"></i>
+          <span>Agregar Usuario</span>
+        </a>
+      </li><!-- End Agregar Usuario Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link " href="roles">
+          <i class="bi bi-grid"></i>
+          <span>Agregar Rol</span>
+        </a>
+      </li><!-- End Agregar Usuario Nav -->
 
       <li class="nav-item">
         <a class="nav-link " href="app/vistas/modulos/exit.php">

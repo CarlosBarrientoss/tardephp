@@ -4,14 +4,12 @@ require_once "app/modelos/login.model.php";
 
 class LoginController{
 
-    static public function ctrVerifyUser(){
+    public static function ctrVerifyUser(){
     
         if(isset($_POST["email"])){
-            $table = "users";
-            $email = "user_email";
             $value = $_POST["email"];
 
-            $response = LoginModel::mdlVerifyUser($table,  $email, $value);
+            $response = LoginModel::mdlVerifyUser($value);
 
             if($response && $_POST["password"] === $response["user_password"]){
                 session_start();

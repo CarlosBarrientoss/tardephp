@@ -21,7 +21,7 @@
 
           if (isset($_GET["route"])){
 
-            $allowedRoutes = ["home","users","exit", "login"];
+            $allowedRoutes = ["home","users","exit", "login", "roles"];
 
             if(in_array($_GET["route"],$allowedRoutes)){ 
 
