@@ -24,4 +24,28 @@ class RoleController{
             }
         }
     }
+
+    public static function ctrGetAllRoles(){
+        return RoleModel::mdlGetAllRoles();
+    }
+        public function ctrRoleAssign() {
+            if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                $userId = $_POST["user"];
+                $roleId = $_POST["role"];
+
+                if (!$userId || !$roleId) {
+                    echo "<div class='alert alert-danger'>Debe seleccionar usuario y rol</div>";
+                    return;
+                }
+
+                $res = RoleModel::mdlAssignRoleToUser($userId, $roleId);
+
+                if ($res === "ok") {
+                    echo "<div class='alert alert-success'>Rol asignado correctamente</div>";
+                } else {
+                    echo "<div class='alert alert-danger'>Error al asignar rol</div>";
+                }
+            }
+        }
+
 }

@@ -49,5 +49,17 @@ if(
     exit;
 }
 
+//Registrar rol al usuario
+if(
+    $_SERVER["REQUEST_METHOD"] === "POST" &&
+    isset($_GET["route"], $_GET["action"]) &&
+    $_GET["route"] === "roleUser" &&
+    $_GET["action"] === "assign"
+  ){
+    $roleAssignController = new RoleController();
+    $roleAssignController->ctrRoleAssign();
+    exit;
+}
+
 $plantilla = new ControladorPlantilla();
 $plantilla->ctrPlantilla();

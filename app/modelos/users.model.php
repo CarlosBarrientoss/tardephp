@@ -12,4 +12,10 @@ class UserModel{
 
         return $stmt->execute() ? "ok" : "error";
     }
+
+    public static function mdlGetAllUsers(){
+       $stmt = Conexion::conectar()->prepare("SELECT * FROM users");
+       $stmt->execute();
+       return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
