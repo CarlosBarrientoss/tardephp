@@ -31,7 +31,7 @@
       </li><!-- End Asignar Rol a Usuario Nav -->
 
       <li class="nav-item">
-        <a class="nav-link " href="app/vistas/modulos/exit.php">
+        <a class="nav-link " href="exit">
           <i class="bi bi-grid"></i>
           <span>Cerrar sesión</span>
         </a>

@@ -13,13 +13,11 @@
     <section class="section dashboard">
       <div class="row">
 
-      <?php 
-      
+      <?php       
           if (session_status() !== PHP_SESSION_ACTIVE) {
               session_start();
-          }
-
-          if (isset($_GET["route"])){
+          }         
+           if (isset($_GET["route"])){
 
             $allowedRoutes = ["home","users","exit", "login", "roles", "asignarRol"];
 
