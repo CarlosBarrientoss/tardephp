@@ -1,7 +1,5 @@
   <aside id="sidebar" class="sidebar">
-
     <ul class="sidebar-nav" id="sidebar-nav">
-
       <li class="nav-item">
         <a class="nav-link " href="home">
           <i class="bi bi-grid"></i>
@@ -38,5 +36,4 @@
       </li><!-- End cerrar sesión -->
 
     </ul>
-
   </aside>

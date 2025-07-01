@@ -16,13 +16,18 @@ class LoginController{
 
                 $idUser = $response["pk_id_user"];
 
-                $idRole = LoginModel::mdlVerifyRole($idUser);
+                $responseUserRole = LoginModel::mdlVerifyRole($idUser);
+
+                $fkIdRole = $responseUserRole["fk_id_role"];
+
+                $responseRoleName = LoginModel::mdlVerifyNameRole($fkIdRole);
 
                 session_start();
                 $_SESSION["authenticated"] = "ok";
                 $_SESSION["user_name"] = $response["user_name"];
                 $_SESSION["USER_ID"] = $response["pk_id_user"];
-                $_SESSION["ROLE_ID"] = $idRole["fk_id_role"];
+                $_SESSION["ROLE_ID"] = $responseUserRole["fk_id_role"];
+                $_SESSION["ROLE_NAME"] = $responseRoleName["role_name"];
                 header("Location: index.php");
             }else{
                 echo '<div class="alert alert-danger text-center">Credenciales incorrectas</div>';
@@ -34,5 +39,11 @@ class LoginController{
 
     }
 
-
+    public static function ctrLogout() {
+        session_start();
+        session_unset();
+        session_destroy();
+        header("Location: index.php");
+        exit;
+    }
 }

@@ -34,14 +34,14 @@
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
               <h6><?php echo $_SESSION["user_name"] ?? "Usuario"; ?></h6>
-              <span>Web Designer</span>
+              <span><?php echo $_SESSION["ROLE_NAME"] ?? "Rol"; ?></span>
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="exit">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Cerrar Sesión</span>
               </a>

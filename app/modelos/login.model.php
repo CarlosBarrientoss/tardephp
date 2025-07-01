@@ -18,4 +18,12 @@ class LoginModel{
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+    static public function mdlVerifyNameRole($roleId){
+        $sql = "SELECT role_name FROM roles WHERE pk_id_role = :roleid";
+        $stmt = Conexion::conectar()->prepare($sql);
+        $stmt->bindParam(":roleid", $roleId, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }
